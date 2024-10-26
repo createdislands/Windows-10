@@ -3,36 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows 10 Simulation</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS -->
+    <title>Linux Emulator</title>
+    <script src="js/v86.js"></script> <!-- Link to v86.js -->
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #emulator {
+            width: 100%;
+            height: 100vh;
+            background-color: #000;
+        }
+    </style>
 </head>
 <body>
-    <div id="desktop">
-        <div class="desktop-icon" style="top: 50px; left: 50px;">
-            <img src="assets/folder-icon.png" alt="Folder">
-            <p>My Documents</p>
-        </div>
-        <div class="desktop-icon" style="top: 50px; left: 200px;">
-            <img src="assets/notepad-icon.png" alt="Notepad">
-            <p>Notepad</p>
-        </div>
-    </div>
-
-    <div id="taskbar">
-        <div id="start-button">
-            <img src="assets/start-icon.png" alt="Start">
-        </div>
-        <div id="open-windows"></div>
-    </div>
-
-    <div id="start-menu">
-        <ul>
-            <li>Notepad</li>
-            <li>Calculator</li>
-            <li>Settings</li>
-        </ul>
-    </div>
-
-    <script src="script.js"></script> <!-- Link to your JS -->
+    <div id="emulator"></div>
+    <script>
+        // Create a new v86 instance
+        const v86 = new V86({
+            memory_size: 128 * 1024 * 1024, // 128 MB of RAM
+            vga_bpp: 32, // 32-bit color
+            vga: {
+                width: 1024,
+                height: 768
+            },
+            on_hard_disk: function(image) {
+                return new V86DiskImage({
+                    url: "path/to/linux-disk.img", // Add your Linux disk image here
+                    on_ready: function() {
+                        // Start the emulator once the disk image is ready
+                        v86.start();
+                    }
+                });
+            },
+            on_machine_start: function() {
+                console.log("Emulator started");
+            },
+        });
+    </script>
 </body>
 </html>
