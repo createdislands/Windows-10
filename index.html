@@ -1,34 +1,38 @@
----
-layout: default
-title: Windows 10 Simulation
----
-
-<link rel="stylesheet" href="css/custom-theme.css">
-
-<div id="desktop">
-    <div class="desktop-icon" style="top: 50px; left: 50px;">
-        <img src="assets/folder-icon.png" alt="Folder">
-        <p>My Documents</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 10 Simulation</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <div id="desktop">
+        <div class="desktop-icon" style="top: 50px; left: 50px;">
+            <img src="assets/folder-icon.png" alt="Folder">
+            <p>My Documents</p>
+        </div>
+        <div class="desktop-icon" style="top: 50px; left: 200px;">
+            <img src="assets/notepad-icon.png" alt="Notepad">
+            <p>Notepad</p>
+        </div>
     </div>
-    <div class="desktop-icon" style="top: 50px; left: 200px;">
-        <img src="assets/notepad-icon.png" alt="Notepad">
-        <p>Notepad</p>
+
+    <div id="taskbar">
+        <div id="start-button">
+            <img src="assets/start-icon.png" alt="Start">
+        </div>
+        <div id="open-windows"></div>
     </div>
-</div>
 
-<div id="taskbar">
-    <div id="start-button">
-        <img src="assets/start-icon.png" alt="Start">
+    <div id="start-menu">
+        <ul>
+            <li>Notepad</li>
+            <li>Calculator</li>
+            <li>Settings</li>
+        </ul>
     </div>
-    <div id="open-windows"></div>
-</div>
 
-<div id="start-menu">
-    <ul>
-        <li>Notepad</li>
-        <li>Calculator</li>
-        <li>Settings</li>
-    </ul>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script> <!-- Link to your JS -->
+</body>
+</html>
