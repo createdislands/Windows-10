@@ -3,13 +3,14 @@ layout: default
 title: Windows 10 Simulation
 ---
 
+<link rel="stylesheet" href="css/custom-theme.css">
+
 <div id="desktop">
-    <!-- Example Desktop Icon -->
-    <div class="desktop-icon">
+    <div class="desktop-icon" style="top: 50px; left: 50px;">
         <img src="assets/folder-icon.png" alt="Folder">
         <p>My Documents</p>
     </div>
-    <div class="desktop-icon">
+    <div class="desktop-icon" style="top: 50px; left: 200px;">
         <img src="assets/notepad-icon.png" alt="Notepad">
         <p>Notepad</p>
     </div>
