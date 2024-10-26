@@ -4,7 +4,7 @@ document.getElementById("start-button").addEventListener("click", function() {
     startMenu.style.display = (startMenu.style.display === "none" || startMenu.style.display === "") ? "block" : "none";
 });
 
-// Add logic to open applications from start menu (e.g., Notepad)
+// Logic to open applications from start menu
 document.querySelectorAll("#start-menu li").forEach(function(menuItem) {
     menuItem.addEventListener("click", function() {
         const appName = menuItem.textContent;
